@@ -10,12 +10,14 @@
     <header>
       <h1>Totally Awesome Mix CD</h1>
     </header>
-    <main>
-      <ul id="song-list"> </ul>
+    <main id='song-list'>
     </main>
 
     <script id="song-template" type="text/template">
-      <!-- Add Template for Song fields here -->
+      <section>
+        <h1> <%- title %> </h1>
+        <h2> <%- artist %> - <%- year %> </h2>
+      </section>
     </script>
 
   <script src="app.bundle.js" type="text/javascript"></script>
