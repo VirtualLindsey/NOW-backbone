@@ -2,7 +2,7 @@
 import $ from 'jquery';
 import _ from 'underscore';
 import Song from './models/song';
-
+import SongList from './collections/song_list';
 // CSS
 import './css/foundation.css';
 import './css/style.css';
@@ -36,4 +36,16 @@ $(document).ready( () => {
 
   console.log('attirbutes are');
   console.log(song.attributes);
+
+  const songTemplate = _.template($('#song-template').html());
+  const songList = new SongList();
+
+  songData.forEach((song) => {
+    const generatedHTML = songTemplate(song);
+    songList.add(song);
+    console.log(generatedHTML);
+    $('#song-list').append($(generatedHTML));
+  });
+
+  console.log(songList);
 });
